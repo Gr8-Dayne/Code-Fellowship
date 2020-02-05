@@ -1,5 +1,6 @@
 package com.daylong.CodeFellowship;
 
+import com.daylong.CodeFellowship.controllers.ApplicationUserController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -18,8 +19,8 @@ class CodeFellowshipApplicationTests {
 	@Autowired
 	private MockMvc mockMvc;
 
-//	@Autowired
-//	private ApplicationUserController applicationUserController;
+	@Autowired
+	private ApplicationUserController applicationUserController;
 
 	@Test
 	void contextLoads() {
