@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Profile</title>
+</head>
+<body>
+<main>
+    <h1>You are logged in as [[${username}]]</h1>
+    <h2>[[${firstName}]] [[${lastName}]], DOB: [[${dateOfBirth}]]</h2>
+    <p>[[${bio}]]</p>
+</main>
+<h2><a href="/logout">Logout</a></h2>
+</body>
+</html>
+
+
