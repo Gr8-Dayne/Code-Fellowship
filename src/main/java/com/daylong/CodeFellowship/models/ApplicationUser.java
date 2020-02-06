@@ -3,28 +3,26 @@ package com.daylong.CodeFellowship.models;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 
 @Entity
 public class ApplicationUser implements UserDetails {
-
-
 
     @Override
     public String toString() {
         return "" + this.id + "";
     }
 
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long id;
+
+    @OneToMany(mappedBy = "savedUser")
+    List<UserPost> myPosts;
 
     private String username;
     private String password;
@@ -75,11 +73,6 @@ public class ApplicationUser implements UserDetails {
         return this.bio;
     }
 
-//    @Override
-//    public String toString() {
-//        return "You are logged in as: " + firstName + " " + lastName + " (username: " + username + ")";
-//    }
-
     @Override
     public boolean isAccountNonExpired() {
         return true;
@@ -98,5 +91,9 @@ public class ApplicationUser implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public List<UserPost> getMyPosts() {
+        return myPosts;
     }
 }

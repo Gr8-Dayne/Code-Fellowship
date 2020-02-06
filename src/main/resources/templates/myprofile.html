@@ -21,13 +21,14 @@
             <br>
             <li>Bio: [[${myBio}]]</li>
         </ul>
-<!--        <h4>My Posts</h4>-->
-<!--        <ul id="myPosts">-->
-<!--            <li th:each="post : ${postsByMe}">-->
-<!--                <span th:text="${post.user}"></span>-->
-<!--                <span th:text="${post.content}"></span>-->
-<!--            </li>-->
-<!--        </ul>-->
+        <h4>My Posts</h4>
+        <ul id="myPosts" th:each="post : ${postsByMe}">
+            <li class="eachPost">
+                <p th:text="${post.content}"></p>
+                <span>Post Created: </span>
+                <span th:text="${post.timeCreated}"></span>
+            </li>
+        </ul>
     </div>
 </main>
 </body>

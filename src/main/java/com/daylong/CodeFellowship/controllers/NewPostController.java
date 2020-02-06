@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
+import java.security.Principal;
 
 
 @Controller
@@ -27,26 +28,12 @@ public class NewPostController {
     }
 
     @PostMapping("/newpost")
-    public RedirectView createNewPost(String content, String username){
-        ApplicationUser savedUser = applicationUserRepository.findByUsername(username);
-        UserPost t = new UserPost(content, savedUser);
-
-        System.out.println(username);
-//        System.out.println(t.getAuthor());
-        System.out.println(t.getPostContent());
+    public RedirectView createNewPost(String content, Principal p){
+        ApplicationUser loggedInUser = applicationUserRepository.findByUsername(p.getName());
+        UserPost t = new UserPost(content, loggedInUser);
 
         userPostRepository.save(t);
 
-        return new RedirectView("/accounts");
+        return new RedirectView("/myprofile");
     }
-
-//    @GetMapping("/inbox")
-//    public String getInbox(Principal p, Model m){
-//
-//        ApplicationUser user = applicationUserRepository.findByUsername(p.getName());
-//
-//        m.addAttribute("messages",user.getInbox());
-//
-//        return "inbox";
-//    }
 }

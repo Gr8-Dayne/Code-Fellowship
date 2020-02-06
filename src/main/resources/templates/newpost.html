@@ -12,7 +12,6 @@
 <header th:insert="fragments/header.html :: header"></header>
 <main  id="newPostMain">
     <form id="newPostForm" action="/newpost" method="POST">
-        <span>Author: </span><input id="newPostTo" type="text" name="username">
         <span>Message: </span><textarea id="newPostText" name="content"></textarea>
         <input id="submitNewPost" type="submit" value="Show The World">
     </form>

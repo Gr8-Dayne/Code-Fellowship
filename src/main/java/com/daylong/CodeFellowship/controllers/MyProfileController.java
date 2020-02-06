@@ -38,7 +38,8 @@ public class MyProfileController {
         else {
             m.addAttribute("action","/login");
         }
-//        m.addAttribute("postsByMe", userPostRepository.findByUser(myProfile));
+        m.addAttribute("postsByMe", myProfile.getMyPosts());
+        System.out.println(myProfile.getMyPosts());
         return "myprofile";
     }
 
