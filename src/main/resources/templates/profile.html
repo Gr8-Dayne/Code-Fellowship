@@ -1,17 +1,29 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link type="text/css" rel="stylesheet" href="/style.css">
 <head>
+    <meta charset="UTF-8">
     <title>Profile</title>
 </head>
 <body>
-<main>
-    <h1>You are logged in as [[${username}]]</h1>
-    <h2>[[${firstName}]] [[${lastName}]], DOB: [[${dateOfBirth}]]</h2>
-    <p>[[${bio}]]</p>
+<header th:insert="fragments/header.html :: header"></header>
+<main id="element">
+    <h4>Welcome to [[${userISeeUsername}]]'s profile page, [[${myUsername}]].</h4>
+    <ul>
+        <li>[[${userISeeGovName}]]</li>
+        <br>
+        <li>Birthday: [[${userISeeDOB}]]</li>
+        <br>
+        <li>Bio: [[${userISeeBio}]]</li>
+    </ul>
+    <h4>[[${userISeeUsername}]]'s Posts</h4>
+    <ul id="thisUserPosted">
+        <li>[[${userISeeGovName}]]</li>
+        <br>
+        <li>Birthday: [[${userISeeDOB}]]</li>
+        <br>
+        <li>Bio: [[${userISeeBio}]]</li>
+    </ul>
 </main>
-<h2><a href="/logout">Logout</a></h2>
 </body>
 </html>
-
-

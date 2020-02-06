@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="">
+<link type="text/css" rel="stylesheet" href="/style.css">
+<head>
+    <meta charset="UTF-8">
+    <title>All Accounts</title>
+</head>
+<body>
+<header th:insert="fragments/header.html :: header"></header>
+<main id="accountsMain">
+    <br>
+    <h1>Hey [[${username}]], here are some possible friends:</h1>
+    <br>
+    <ul class="userList" th:each="user : ${allUsers}">
+        <li>
+            <span class="displayUsernameInAccounts" th:text="${user.username}"></span>
+        </li>
+        <li>
+            <span class="displayBioInAccounts" th:text="${user.bio}"></span>
+        </li>
+        <li>
+            <!--Go To User Profile-->
+            <form class="toUserProfileFromAccounts" th:action="'/users/' + ${user.id}" method="GET">
+                <button class="viewProfileButton">View Profile</button>
+            </form>
+        </li>
+
+    </ul>
+</main>
+</body>
+</html>

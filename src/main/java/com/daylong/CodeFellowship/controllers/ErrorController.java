@@ -1,16 +1,12 @@
 package com.daylong.CodeFellowship.controllers;
 
-
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import java.security.Principal;
 
+public class ErrorController {
 
-@Controller
-public class HomeController {
-
-    @GetMapping("/")
+    @GetMapping("/error")
     public String getHome(Principal p, Model m){
         if(p != null){
             m.addAttribute("username", p.getName());
@@ -19,6 +15,6 @@ public class HomeController {
         else {
             m.addAttribute("action","/login");
         }
-        return "home";
+        return "error";
     }
 }

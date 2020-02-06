@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<link type="text/css" rel="stylesheet" href="/style.css">
 <head>
     <title>Create New User</title>
 </head>
 <body>
+<header th:insert="fragments/header.html :: header"></header>
 <main>
     <div th:if="${param.error}">
         <p>Invalid username and password.</p>
@@ -12,17 +14,16 @@
     <div th:if="${param.logout}">
         <p>You have been logged out.</p>
     </div>
-    <div id="container">
+    <div id="element">
         <h2>Register New Account</h2>
         <form th:action="@{/create}" method="POST">
-            <div>Username: <input type="text" name="username" required/></div>
-            <div>Password: <input type="password" name="password" required/></div>
+            <div id="username"><span>Username: </span><input  type="text" name="username"/></div>
+            <div id="password"><span>Password: </span><input   type="password" name="password"/></div>
             <br>
-            <div>First Name: <input type="text" name="firstName" required/></div>
-            <br>
-            <div>Last Name (optional): <input type="text" name="lastName"/></div>
-            <div>Date of Birth (optional): <input type="text" name="dateOfBirth"/></div>
-            <div>Bio (optional): <input type="text"  name="bio"></div>
+            <div class="personalInfoReg">First Name: <input type="text" name="firstName" required/></div>
+            <div class="personalInfoReg">Last Name: <input type="text" name="lastName"/></div>
+            <div class="personalInfoReg">Date of Birth: <input type="text" name="dateOfBirth"/></div>
+            <div class="personalInfoReg">Bio: <input type="text"  name="bio"></div>
             <br>
             <input type="submit" value="Create Profile"/>
         </form>

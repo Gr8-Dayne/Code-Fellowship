@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<link type="text/css" rel="stylesheet" href="/style.css">
+<head>
+    <title>My Profile</title>
+</head>
+<body>
+<header th:insert="fragments/header.html :: header"></header>
+<main>
+    <div id="element">
+        <h4>Hello there, [[${username}]]!</h4>
+        <ul>
+            <li><a id="newPostButton" href="/newpost"><button style="font-size:24px">Make Post</button></a></li>
+            <br>
+            <li>[[${myGovName}]]</li>
+            <br>
+            <li>Account Number: [[${myId}]]</li>
+            <br>
+            <li>Birthday: [[${myDOB}]]</li>
+            <br>
+            <li>Bio: [[${myBio}]]</li>
+        </ul>
+<!--        <h4>My Posts</h4>-->
+<!--        <ul id="myPosts">-->
+<!--            <li th:each="post : ${postsByMe}">-->
+<!--                <span th:text="${post.user}"></span>-->
+<!--                <span th:text="${post.content}"></span>-->
+<!--            </li>-->
+<!--        </ul>-->
+    </div>
+</main>
+</body>
+</html>
+
+

@@ -13,24 +13,33 @@ import java.util.Collection;
 @Entity
 public class ApplicationUser implements UserDetails {
 
+
+
+    @Override
+    public String toString() {
+        return "" + this.id + "";
+    }
+
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    public long id;
 
-    String username;
-    String password;
-    String firstName;
-    String lastName;
-    String dateOfBirth;
-    String bio;
+    private String username;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String dateOfBirth;
+    private String bio;
 
     public ApplicationUser(String username, String password, String firstName, String lastName, String dateOfBirth, String bio){
         this.username = username;
         this.password = password;
-        this.username = firstName;
-        this.password = lastName;
-        this.username = dateOfBirth;
-        this.password = bio;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.bio = bio;
     }
 
     public ApplicationUser() {};
@@ -49,6 +58,27 @@ public class ApplicationUser implements UserDetails {
     public String getUsername() {
         return this.username;
     }
+
+    public long getId(){
+        return this.id;
+    }
+
+    public String getFirstNameLastName(){
+        return "Name: " + this.firstName + " " + this.lastName;
+    }
+
+    public String getDateOfBirth(){
+        return this.dateOfBirth;
+    }
+
+    public String getBio(){
+        return this.bio;
+    }
+
+//    @Override
+//    public String toString() {
+//        return "You are logged in as: " + firstName + " " + lastName + " (username: " + username + ")";
+//    }
 
     @Override
     public boolean isAccountNonExpired() {

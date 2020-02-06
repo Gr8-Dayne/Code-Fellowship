@@ -1,0 +1,204 @@
+header {
+background-color: black;
+height: 4em;
+box-shadow: 1px 2px black;
+}
+
+#navul{
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+
+.navli{
+margin-top: 2vh;
+color: white;
+font-size: 1.4em;
+}
+
+main h1 {
+font-size: 4em;
+width: 50%;
+margin: 0 auto;
+text-align: center;
+}
+
+main h4 {
+width: 50%;
+margin: 0 auto;
+margin-top: 3vh;
+margin-bottom: 3vh;
+font-size:3em;
+text-align: center;
+}
+
+main p {
+width: 50%;
+margin: 0 auto;
+text-align: center;
+font-size: 1.5em;
+}
+
+#profileContainer{
+text-align: center;
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 15vh;
+padding-top: 5vh;
+padding-bottom: 5vh;
+background: rgba(0, 0, 0, 0.5);
+color:#b6c7c9;
+
+}
+
+body {
+background-image: url("fellowship.jpg");
+background-color: grey;
+opacity: .75;
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-size: span;
+}
+
+main{
+background-image: url("whiteRing.jpg");
+}
+
+#element{
+text-align: center;
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 15vh;
+padding-top: 5vh;
+padding-bottom: 10vh;
+background: rgba(0, 0, 0, 0.5);
+color:#e8b923;
+font-family: 'Luminari', fantasy;
+}
+
+#login{
+  text-align: center;
+  margin-top: 5vh;
+}
+
+#username{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3vh;
+}
+
+#password{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.personalInfoReg{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 1vh;
+margin-bottom: 1vh;
+}
+
+#register {
+color: gold;
+margin: 0 auto;
+margin-top: 2%;
+text-align: center;
+}
+
+#loginToRegisterButton{
+background-color: gold;
+}
+
+#accountsMain{
+text-align: center;
+padding-bottom: 5vh;
+}
+
+.userList{
+display: table;
+margin: 0 auto;
+color: yellow;
+border: 2px solid black;
+height: 30vh;
+width: 40vw;
+font-size: 1.5em;
+text-align: center;
+background-color: grey;
+margin-bottom: 5vh;
+}
+
+.displayUsernameInAccounts{
+font-size: 1.7em;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.displayBioInAccounts{
+margin-top: 4vh;
+}
+
+.toUserProfileFromAccounts{
+margin: 0;
+}
+
+.viewProfileButton{
+margin: 0 auto;
+margin-top: 2vh;
+display: flex;
+vertical-align: center;
+align-items: center;
+justify-content: center;
+height: 10vh;
+width: 20vw;
+background-color: tan;
+opacity: 100%;
+font-size: 16px;
+cursor: pointer;
+}
+
+#newPostButton{
+
+}
+
+#newPostMain{
+text-align: center;
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 20vh;
+width: 60%;
+}
+
+#newPostForm{
+height: 50vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+#newPostTo{
+width: 15vw;
+margin: 5px;
+}
+
+#newPostText{
+width: 30vw;
+height-min: 10vh;
+height-max: 20vh;
+margin: 5px;
+}
+
+#submitNewPost{
+width: 15vw;
+margin: 5px;
+}
