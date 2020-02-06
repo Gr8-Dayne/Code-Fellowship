@@ -19,13 +19,21 @@ public class ApplicationUser implements UserDetails {
 
     String username;
     String password;
+    String firstName;
+    String lastName;
+    String dateOfBirth;
+    String bio;
 
-    public ApplicationUser() {};
-
-    public ApplicationUser(String username, String password){
+    public ApplicationUser(String username, String password, String firstName, String lastName, String dateOfBirth, String bio){
         this.username = username;
         this.password = password;
+        this.username = firstName;
+        this.password = lastName;
+        this.username = dateOfBirth;
+        this.password = bio;
     }
+
+    public ApplicationUser() {};
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

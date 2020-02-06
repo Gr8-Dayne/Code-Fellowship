@@ -30,9 +30,10 @@ public class CreateController {
     }
 
     @PostMapping("/create")
-    public RedirectView registerUser(String username, String password){
-        ApplicationUser newUser = new ApplicationUser(username, passwordEncoder.encode(password));
+    public RedirectView registerUser(String username, String password, String firstName, String lastName, String dateOfBirth, String bio){
+        ApplicationUser newUser = new ApplicationUser(username, passwordEncoder.encode(password), firstName, lastName, dateOfBirth, bio);
         applicationUserRepo.save(newUser);
+        System.out.println("newUser = " + newUser);
         Authentication authentication = new UsernamePasswordAuthenticationToken(newUser, null, new LinkedList<>());
         SecurityContextHolder.getContext().setAuthentication(authentication);
         return new RedirectView("/profile");

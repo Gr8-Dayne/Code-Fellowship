@@ -7,17 +7,26 @@
 <body>
 <main>
     <div th:if="${param.error}">
-        Invalid username and password.
+        <p>Invalid username and password.</p>
     </div>
     <div th:if="${param.logout}">
-        You have been logged out.
+        <p>You have been logged out.</p>
     </div>
-    <h1>Register Here</h1>
-    <form th:action="@{/create}" method="POST">
-        User Name: <input type="text" name="username"/>
-        Password:   <input type="password" name="password"/>
-        <input type="submit" value="Create Profile"/>
-    </form>
+    <div id="container">
+        <h2>Register New Account</h2>
+        <form th:action="@{/create}" method="POST">
+            <div>Username: <input type="text" name="username" required/></div>
+            <div>Password: <input type="password" name="password" required/></div>
+            <br>
+            <div>First Name: <input type="text" name="firstName" required/></div>
+            <br>
+            <div>Last Name (optional): <input type="text" name="lastName"/></div>
+            <div>Date of Birth (optional): <input type="text" name="dateOfBirth"/></div>
+            <div>Bio (optional): <input type="text"  name="bio"></div>
+            <br>
+            <input type="submit" value="Create Profile"/>
+        </form>
+    </div>
 </main>
 </body>
 </html>

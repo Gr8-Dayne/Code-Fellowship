@@ -20,7 +20,6 @@ public class ProfileController {
         if (p != null) {
             m.addAttribute("username", p.getName());
         }
-
         return "profile";
     }
 }
