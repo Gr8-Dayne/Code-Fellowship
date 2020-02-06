@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="">
+<link type="text/css" rel="stylesheet" href="/style.css">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
 <body>
-<h2><a href="/login">Login</a></h2>
+    <header th:insert="fragments/header.html :: header"></header>
+<main id="homeMain">
+    <div id="element">
+        <h1>The Most Epic Fellowship of All Thyme</h1>
+        <h4>Welcome, Fellow Coder</h4>
+        <p>Please feel free to create an account with my website in order to interact with fellow nerds, geeks, and techies alike on their quests to become better programmers.</p>
+    </div>
+</main>
 </body>
 </html>
