@@ -8,7 +8,7 @@
 #### Methods
 
 * To run this you can run ./gradlew test in the CLI or import the app to IntelliJ and run it from there.
-* Used <a href=https://stackoverflow.com/questions/7428039/java-constructor-method-with-optional-parameters>stackoverflow</a> and <a href=https://github.com/codefellows/seattle-java-401d7/tree/master/class-06>Class Demos</a> as references.
+* Used <a href=https://stackoverflow.com/questions/7428039/java-constructor-method-with-optional-parameters>stackoverflow,</a> <a href="https://frontrowviews.com/Home/Event/Details/5e1fae3ceee6db204c8307fa">FrontRow</a> (Jan 27-31), and <a href=https://github.com/codefellows/seattle-java-401d7>Class Demos</a> (Jan 27-31) as references.
 
 * The site should allow users to create an ApplicationUser on the “sign up” page.
 
