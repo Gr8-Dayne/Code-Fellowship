@@ -3,21 +3,12 @@
 <link type="text/css" rel="stylesheet" href="/style.css">
 <head>
     <meta charset="UTF-8">
-    <title>Profile</title>
+    <title>Feed</title>
 </head>
 <body>
 <header th:insert="fragments/header.html :: header"></header>
 <main id="element">
-    <h4>Welcome to [[${userISeeUsername}]]'s profile page, [[${myUsername}]].</h4>
-    <ul>
-        <li>[[${userISeeGovName}]]</li>
-        <br>
-        <li>Birthday: [[${userISeeDOB}]]</li>
-        <br>
-        <li>Bio: [[${userISeeBio}]]</li>
-    </ul>
-    <h4>[[${userISeeUsername}]]'s Posts:</h4>
-    <ul id="thisUserPosted" th:each="post : ${postsByUserISee}">
+    <ul th:each="post : ${postList}">
         <li>
             <p class="eachPost" th:text="${post.content}"></p>
             <span class="eachPost">Post Created: </span>

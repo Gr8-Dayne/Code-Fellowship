@@ -32,6 +32,9 @@ public class ProfileController {
     // Credit: 01/28/2020 class demo
     @GetMapping("/users/{id}")
     public String showUserDetails(@PathVariable long id, Principal p, Model m){
+
+        m.addAttribute("myUsername", p.getName());
+
         ApplicationUser theUser = applicationUserRepository.findById(id).get();
         m.addAttribute("userISeeUsername", theUser.getUsername());
         m.addAttribute("userISeeId", theUser.id);
@@ -39,7 +42,8 @@ public class ProfileController {
         m.addAttribute("userISeeGovName", theUser.getFirstNameLastName());
         m.addAttribute("userISeeDOB", theUser.getDateOfBirth());
         m.addAttribute("userISeeBio", theUser.getBio());
-        m.addAttribute("myUsername", p.getName());
+        m.addAttribute("postsByUserISee", theUser.getMyPosts());
+
         return "profile";
     }
 }
