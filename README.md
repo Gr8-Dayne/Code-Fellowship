@@ -2,12 +2,12 @@
 
 
 
-## LAB 16 - Spring Auth
+## LABS 16 - 19
 
 
 #### Methods
 
-* To run this you can run ./gradlew test in the CLI or import the app to IntelliJ and run it from there.
+* To run this you can import the app to IntelliJ and run it from there.
 
 * The site should allow users to create an ApplicationUser on the “sign up” page.
 
