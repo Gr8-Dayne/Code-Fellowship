@@ -24,6 +24,11 @@
             <span class="eachPost" th:text="${post.timeCreated}"></span>
         </li>
     </ul>
+    <!--Add friend-->
+    <form action="/follow" method="POST">
+        <input type="hidden" name="id" th:value="${id}">
+        <input class="viewProfileButton" type="submit" value="Add Friend">
+    </form>
 </main>
 </body>
 </html>

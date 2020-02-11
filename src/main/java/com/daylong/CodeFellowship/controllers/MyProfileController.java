@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
 import java.security.Principal;
 
 
@@ -39,16 +37,6 @@ public class MyProfileController {
             m.addAttribute("action","/login");
         }
         m.addAttribute("postsByMe", myProfile.getMyPosts());
-        System.out.println(myProfile.getMyPosts());
         return "myprofile";
     }
-
-//    @GetMapping("/friends/{id}")
-//    public String getAllFriends(@PathVariable long id, Principal p, Model d){
-//        ApplicationUser friendsList = applicationUserRepo.findById(id).get();
-//        ApplicationUser loggedInUser = applicationUserRepo.findByUsername(p.getName());
-//        d.addAttribute("friendsList", friendsList);
-//        d.addAttribute("loggedInUser", loggedInUser);
-//        return "/profile";
-//    }
 }

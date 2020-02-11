@@ -3,7 +3,6 @@ package com.daylong.CodeFellowship.models;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
@@ -12,17 +11,16 @@ import java.util.List;
 @Entity
 public class ApplicationUser implements UserDetails {
 
-    @Override
-    public String toString() {
-        return "" + this.id + "";
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long id;
 
     @OneToMany(mappedBy = "savedUser")
     List<UserPost> myPosts;
+
+    // I'M SO FRIGGIN HAPPY THIS WORKS
+    @ManyToMany
+    List<ApplicationUser> myFriends;
 
     private String username;
     private String password;
@@ -55,6 +53,11 @@ public class ApplicationUser implements UserDetails {
     @Override
     public String getUsername() {
         return this.username;
+    }
+
+    @Override
+    public String toString() {
+        return "" + this.id + "";
     }
 
     public long getId(){
@@ -95,5 +98,13 @@ public class ApplicationUser implements UserDetails {
 
     public List<UserPost> getMyPosts() {
         return myPosts;
+    }
+
+    public List<ApplicationUser> getMyFriends(){
+        return myFriends;
+    }
+
+    public void addUserToFriends(ApplicationUser userToBefriend){
+        this.myFriends.add(userToBefriend);
     }
 }
