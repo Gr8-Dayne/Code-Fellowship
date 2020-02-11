@@ -9,7 +9,7 @@
 <header th:insert="fragments/header.html :: header"></header>
 <main id="accountsMain">
     <br>
-    <h1>Hey [[${username}]], here are some possible friends:</h1>
+    <h1>Hey [[${username}]], here are all users:</h1>
     <br>
     <ul class="userList" th:each="user : ${allUsers}">
         <li>
@@ -24,7 +24,6 @@
                 <button class="viewProfileButton">View Profile</button>
             </form>
         </li>
-
     </ul>
 </main>
 </body>

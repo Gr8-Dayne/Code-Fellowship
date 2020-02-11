@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link type="text/css" rel="stylesheet" href="/style.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Feed</title>
+</head>
+<body>
+<header th:insert="fragments/header.html :: header"></header>
+<main id="element">
+    <ul th:each="post : ${postList}">
+        <li>
+            <p class="eachPost" th:text="${post.content}"></p>
+            <span class="eachPost">Post Created: </span>
+            <span class="eachPost" th:text="${post.timeCreated}"></span>
+        </li>
+    </ul>
+</main>
+</body>
+</html>

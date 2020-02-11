@@ -23,10 +23,10 @@
         </ul>
         <h4>My Posts</h4>
         <ul id="myPosts" th:each="post : ${postsByMe}">
-            <li class="eachPost">
-                <p th:text="${post.content}"></p>
-                <span>Post Created: </span>
-                <span th:text="${post.timeCreated}"></span>
+            <li>
+                <p class="eachPost" th:text="${post.content}"></p>
+                <span class="eachPost">Post Created: </span>
+                <span class="eachPost" th:text="${post.timeCreated}"></span>
             </li>
         </ul>
     </div>

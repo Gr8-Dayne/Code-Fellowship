@@ -16,14 +16,19 @@
         <br>
         <li>Bio: [[${userISeeBio}]]</li>
     </ul>
-    <h4>[[${userISeeUsername}]]'s Posts</h4>
-    <ul id="thisUserPosted">
-        <li>[[${userISeeGovName}]]</li>
-        <br>
-        <li>Birthday: [[${userISeeDOB}]]</li>
-        <br>
-        <li>Bio: [[${userISeeBio}]]</li>
+    <h4>[[${userISeeUsername}]]'s Posts:</h4>
+    <ul id="thisUserPosted" th:each="post : ${postsByUserISee}">
+        <li>
+            <p class="eachPost" th:text="${post.content}"></p>
+            <span class="eachPost">Post Created: </span>
+            <span class="eachPost" th:text="${post.timeCreated}"></span>
+        </li>
     </ul>
+    <!--Add friend-->
+    <form action="/follow" method="POST">
+        <input type="hidden" name="id" th:value="${id}">
+        <input class="viewProfileButton" type="submit" value="Add Friend">
+    </form>
 </main>
 </body>
 </html>

@@ -7,6 +7,7 @@ import com.daylong.CodeFellowship.models.UserPost;
 import com.daylong.CodeFellowship.models.UserPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
@@ -23,7 +24,14 @@ public class NewPostController {
     UserPostRepository userPostRepository;
 
     @GetMapping("/newpost")
-    public String getNewPostPage(){
+    public String getNewPostPage(Principal p, Model m){
+        if(p != null){
+            m.addAttribute("username", p.getName());
+            m.addAttribute("action","/logout");
+        }
+        else {
+            m.addAttribute("action","/login");
+        }
         return "newpost";
     }
 
